@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste-Cadastros", "Teste-Cadastros\Teste-Cadastros.csproj", "{A7F730EA-1076-4BB0-8943-0C59362CD72E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCadastrosDAL", "TesteCadastrosDAO\TesteCadastrosDAL.csproj", "{EF369E6A-E77F-41C3-BE48-666E2BF9495B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCadastrosDAL", "TesteCadastrosDAL\TesteCadastrosDAL.csproj", "{EF369E6A-E77F-41C3-BE48-666E2BF9495B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteCadastrosTests", "TesteCadastrosTests\TesteCadastrosTests.csproj", "{1030DCFD-E229-4B41-86FC-BD7695119C49}"
 EndProject

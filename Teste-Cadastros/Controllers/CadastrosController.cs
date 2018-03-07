@@ -72,13 +72,19 @@ namespace Teste_Cadastros.Controllers
         public ActionResult Create()
         {
 
-            Cadastros obj = new Cadastros();
-            obj.Telefones = new List<CadastrosTelefones>
+            try
             {
-                new CadastrosTelefones()
-            };
-            
-            return View(obj);
+                Cadastros obj = new Cadastros();
+                obj.Telefones = new List<CadastrosTelefones> {
+                    new CadastrosTelefones()
+                };
+                return View(obj);
+            }
+            catch
+            {
+            }
+
+            return View();
         }
 
         // POST: Cadastros/Create
@@ -132,16 +138,23 @@ namespace Teste_Cadastros.Controllers
         public ActionResult Edit(int id)
         {
 
-            Cadastros obj = db.Cadastros.Include(a => a.Telefones).Where(x => x.Id == id).FirstOrDefault<Cadastros>();
-
-            if (obj != null)
+            try
             {
-                //obj.Telefones = db.CadastrosTelefones.Where(x => x.Cadastro.Id == id).ToList<CadastrosTelefones>();
-                
-                return View(obj);
-            }
+                Cadastros obj = db.Cadastros.Include(a => a.Telefones).Where(x => x.Id == id).FirstOrDefault<Cadastros>();
 
-            ModelState.AddModelError(String.Empty, "Cadastro não encontrado.");
+                if (obj != null)
+                {
+                    //obj.Telefones = db.CadastrosTelefones.Where(x => x.Cadastro.Id == id).ToList<CadastrosTelefones>();
+
+                    return View(obj);
+                }
+
+                ModelState.AddModelError(String.Empty, "Cadastro não encontrado.");
+            }
+            catch
+            {
+
+            }
 
             return View();
         }

@@ -54,7 +54,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TesteCadastrosDAO\TesteCadastrosDAL.csproj">
+    <ProjectReference Include="..\TesteCadastrosDAL\TesteCadastrosDAL.csproj">
       <Project>{ef369e6a-e77f-41c3-be48-666e2bf9495b}</Project>
       <Name>TesteCadastrosDAL</Name>
     </ProjectReference>
