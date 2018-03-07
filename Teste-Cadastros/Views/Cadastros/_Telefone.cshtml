@@ -1,0 +1,17 @@
+﻿@model TesteCadastrosDAL.Dados.CadastrosTelefones
+
+@using (Html.BeginCollectionItem("Telefones"))
+{
+    <div class="form-horizontal">        
+        <div class="form-group">
+            @Html.HiddenFor(model => model.Id)
+            @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telefone, "* Obrigatório", new { @class = "text-danger" })
+                <a href="javascript:void(0);" class="remover-telefone">Remover</a>
+            </div>
+        </div>
+
+    </div>
+}

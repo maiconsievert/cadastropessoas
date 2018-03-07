@@ -1,0 +1,102 @@
+﻿@model IEnumerable<TesteCadastrosDAL.Dados.Cadastros>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Relatório de Cadastros</h2>
+
+<p style="margin-bottom: 20px;">
+    
+</p>
+
+
+@using (Html.BeginForm())
+{
+
+<table class="table">
+    <tr>
+        <td>
+            Pesquisar por Nome<br />
+            @Html.TextBox("filtro_nome", ViewBag.FiltroNomeAtual as string)
+        </td>
+        <td>
+            Pesquisar por Data de Nascimento<br />
+            @Html.TextBox("filtro_datanascimento", ViewBag.FiltroDataNascimentoAtual as string)
+        </td>
+        <td>
+            Pesquisar por Data de Cadastro<br />
+            @Html.TextBox("filtro_datacadastro", ViewBag.FiltroDataCadastroAtual as string)
+        </td>
+        <td><br /><input type="submit" value="Filtrar" class="btn btn-default" />
+        &nbsp;
+            @Html.ActionLink("Limpar filtros", "Relatorio")
+
+        </td>
+    </tr>
+</table>
+
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Uf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>            
+        <th>
+            @Html.DisplayNameFor(model => model.Rg)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>                
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts {
+
+
+    <script>
+    $(document).ready(function () {
+
+        $('#filtro_datanascimento').mask('00/00/0000', { placeholder: "__/__/____" });
+        $('#filtro_datacadastro').mask('00/00/0000', { placeholder: "__/__/____" });
+
+    });
+    </script>
+
+    @Scripts.Render("~/bundles/jqueryval")
+}
