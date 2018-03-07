@@ -242,6 +242,7 @@ namespace Teste_Cadastros.Controllers
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
+
             }
             catch
             {
