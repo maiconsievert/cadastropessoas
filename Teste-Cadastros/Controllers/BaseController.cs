@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Teste_Cadastros.Controllers
+namespace CadastroPessoas.Controllers
 {
     public class BaseController : Controller
     {
@@ -15,11 +15,29 @@ namespace Teste_Cadastros.Controllers
         protected override void OnActionExecuting(System.Web.Mvc.ActionExecutingContext filterContext)
         {
 
-            var Configuracao = Teste_Cadastros.Helper.ConfiguracoesHelper.ConfiguracoesObj();
+            // VERIFICAR LOGIN
 
-            if (Configuracao == null && filterContext.RouteData.Values["controller"].ToString() != "Configuracoes")
+            #if DEBUG
+                CadastroPessoasDAL.Contexto.CadastrosContext db = new CadastroPessoasDAL.Contexto.CadastrosContext();
+                Session["UsuarioPainel"] = db.Usuarios.Where(x => x.Id == 1).FirstOrDefault();
+
+            #endif
+
+
+
+            ViewBag.UsuarioAutenticado = false;
+
+            if (Session["UsuarioPainel"] != null)
             {
-                filterContext.Result = RedirectToAction("Index", "Configuracoes");
+                ViewBag.UsuarioAutenticado = true;
+                ViewBag.Login = ((CadastroPessoasDAL.Models.Usuarios)Session["UsuarioPainel"]).Login;
+            }
+            else
+            {
+                if (filterContext.RouteData.Values["controller"].ToString() != "Login")
+                {
+                    filterContext.Result = RedirectToAction("Index", "Login");
+                }
             }
             
             base.OnActionExecuting(filterContext);

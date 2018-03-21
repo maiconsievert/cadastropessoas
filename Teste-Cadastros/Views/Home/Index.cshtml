@@ -1,29 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
-
-    var Configuracao = Teste_Cadastros.Helper.ConfiguracoesHelper.ConfiguracoesObj();
+    ViewBag.Title = "Dashboard";
 
 }
 
-@if (Configuracao == null)
-{
-    <div class="jumbotron">
-        <h1>Teste de Cadastros</h1>
-        <p class="lead">ALERTA: É necessário definir algumas configurações antes de utilizar o sistema.</p>
-        <p><a href="@Url.Action("Index", "Configuracoes")" class="btn btn-primary btn-lg">Ir para Configurações &raquo;</a></p>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>        
     </div>
-}
-else
-{
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Bem-vindo</h2>
-        <p style="margin-bottom: 30px;">
-            Este sistema permite efetuar cadastros de pessoas.            
-        </p>
-        <p><a class="btn btn-default" href="@Url.Action("Create", "Cadastros")">Cadastrar novo &raquo;</a></p>
+    
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="~/Content/imagens/pessoas-ilustracao.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Pessoas</h5>
+            <p class="card-text">Aqui você pode começar a cadastrar pessoas.</p>
+            <a href="/pessoas/create/" class="btn btn-primary">Começar agora</a>
+        </div>
     </div>
-</div>
 
-}
+</main>

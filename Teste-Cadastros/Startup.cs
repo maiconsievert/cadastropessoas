@@ -1,14 +1,14 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Teste_Cadastros.Startup))]
-namespace Teste_Cadastros
+[assembly: OwinStartupAttribute(typeof(CadastroPessoas.Startup))]
+namespace CadastroPessoas
 {
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            //ConfigureAuth(app);
+            
         }
     }
 }

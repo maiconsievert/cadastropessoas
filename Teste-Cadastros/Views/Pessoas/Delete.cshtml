@@ -1,0 +1,63 @@
+﻿@model CadastroPessoasDAL.Models.Pessoas
+
+@{
+    ViewBag.Title = "Excluir pessoa";
+}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+        <h1 class="h2">Pessoas</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                @Html.ActionLink("Inserir", "Create", "Pessoas", null, new { @class = "btn btn-sm btn-outline-secondary" })
+            </div>
+        </div>
+    </div>
+
+    <h4>Confirmar exclusão desta pessoa?</h4>
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        if (Model != null)
+        {
+
+
+
+                <div class="form-group">
+                    <b>Nome</b>
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.Nome)
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <b>E-mail</b>
+                    <div class="col-md-12">
+                        @Html.DisplayFor(model => model.Email)
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Confirmar exclusão" class="btn btn-danger" />
+                        @Html.ActionLink("Voltar a lista", "Index", null, new { @class = "btn btn-dark" })
+                    </div>
+                </div>
+
+        }
+        
+
+    }
+
+
+</main>
