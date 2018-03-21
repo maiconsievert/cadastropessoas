@@ -17,11 +17,10 @@ namespace CadastroPessoasWeb.Controllers
 
             // VERIFICAR LOGIN
 
-            #if DEBUG
-                CadastroPessoasDAL.Contexto.CadastrosContext db = new CadastroPessoasDAL.Contexto.CadastrosContext();
-                Session["UsuarioPainel"] = db.Usuarios.Where(x => x.Id == 1).FirstOrDefault();
-
-            #endif
+            //#if DEBUG
+            //    CadastroPessoasDAL.Contexto.CadastrosContext db = new CadastroPessoasDAL.Contexto.CadastrosContext();
+            //    Session["UsuarioPainel"] = db.Usuarios.Where(x => x.Id == 1).FirstOrDefault();
+            //#endif
 
 
 
