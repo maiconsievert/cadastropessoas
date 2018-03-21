@@ -3,11 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoas", "Teste-Cadastros\CadastroPessoas.csproj", "{A7F730EA-1076-4BB0-8943-0C59362CD72E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoasWeb", "CadastroPessoasWeb\CadastroPessoasWeb.csproj", "{A7F730EA-1076-4BB0-8943-0C59362CD72E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoasDAL", "TesteCadastrosDAL\CadastroPessoasDAL.csproj", "{EF369E6A-E77F-41C3-BE48-666E2BF9495B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoasDAL", "CadastroPessoasDAL\CadastroPessoasDAL.csproj", "{EF369E6A-E77F-41C3-BE48-666E2BF9495B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoasTests", "TesteCadastrosTests\CadastroPessoasTests.csproj", "{1030DCFD-E229-4B41-86FC-BD7695119C49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoasTests", "CadastroPessoasTests\CadastroPessoasTests.csproj", "{1030DCFD-E229-4B41-86FC-BD7695119C49}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AppConsumoApi", "AppConsumoApi\", "{3BC407ED-B662-4019-993A-0B42234AF52B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_64414"
+		Debug.AspNetCompiler.PhysicalPath = "AppConsumoApi\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64414\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_64414"
+		Release.AspNetCompiler.PhysicalPath = "AppConsumoApi\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64414\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "64414"
+		SlnRelativePath = "AppConsumoApi\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +49,10 @@ Global
 		{1030DCFD-E229-4B41-86FC-BD7695119C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1030DCFD-E229-4B41-86FC-BD7695119C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1030DCFD-E229-4B41-86FC-BD7695119C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC407ED-B662-4019-993A-0B42234AF52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC407ED-B662-4019-993A-0B42234AF52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC407ED-B662-4019-993A-0B42234AF52B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC407ED-B662-4019-993A-0B42234AF52B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

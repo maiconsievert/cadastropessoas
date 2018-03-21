@@ -1,0 +1,95 @@
+﻿@{
+
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>@ViewBag.Title | Cadastro de Pessoas</title>
+
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Cadastro de Pessoas</a>
+        
+        @if (ViewBag.UsuarioAutenticado)
+        {
+            <form method="post" style="width: 100%;">
+                <input class="form-control form-control-dark w-100" name="pesquisa" id="pesquisa" type="text" value="@ViewBag.pesquisa" placeholder="Buscar" aria-label="Buscar">
+            </form>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="/login/sair">Sair</a>
+                </li>
+            </ul>
+
+            
+        }
+
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            @if (ViewBag.UsuarioAutenticado)
+            {
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <span data-feather="home"></span>
+                                Início <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pessoas/">
+                                <span data-feather="users"></span>
+                                Pessoas
+                            </a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Integrações</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/integracoes/autenticacao">
+                                <span data-feather="file-text"></span>
+                                Autenticação
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/integracoes/listarpessoas">
+                                <span data-feather="file-text"></span>
+                                ListarPessoas()
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            }
+
+            @RenderBody()
+
+        </div>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/main")
+        @RenderSection("scripts", required: false)
+
+    </body>
+</html>
